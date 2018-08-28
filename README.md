@@ -1,1 +1,2 @@
-#11465 Blog Page (Sage) - Home init
+#11465 Blog Page (Sage) - Home
+
