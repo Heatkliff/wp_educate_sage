@@ -1,4 +1,5 @@
 @import "common/variables";
+@import "common/normalize";
 
 /** Import everything from autoload */
 @import "./autoload/**/*";
@@ -23,3 +24,8 @@
 @import "layouts/pages";
 @import "layouts/posts";
 @import "layouts/tinymce";
+
+
+.wrap {
+  background-color: red;
+}

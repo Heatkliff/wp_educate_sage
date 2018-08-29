@@ -1,2 +1,49 @@
-// TODO: .banner .nav li {}
-// TODO: .banner .nav a {}
+.banner {
+  position: absolute;
+  width: 100%;
+
+  .container {
+    margin: auto;
+    max-width: 1200px;
+    .brand {
+      margin-left: 68px;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #ffffff;
+
+      img {
+        display: inline-flex;
+        width: 42px;
+        height: 38px;
+        margin: 10px;
+      }
+
+      .blog_info {
+        font-family: "Nunito Sans", serif;
+        font-weight: 700;
+        position: relative;
+        top: -21px;
+        line-height: 42px;
+        display: inline-flex;
+        margin: 10px;
+      }
+    }
+    .nav-primary{
+      margin: 10px;
+      display: inline-flex;
+      float: right;
+
+      ul {
+        li {
+          display: inline-flex;
+          margin-right: 40px;
+
+          a {
+            text-decoration: none;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+}
