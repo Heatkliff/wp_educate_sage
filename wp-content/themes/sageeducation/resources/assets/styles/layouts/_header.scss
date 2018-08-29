@@ -1,3 +1,14 @@
+#layer {
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .5);
+  z-index: 1;
+}
+
 .banner {
   position: absolute;
   width: 100%;
@@ -28,20 +39,73 @@
         margin: 10px;
       }
     }
-    .nav-primary{
-      margin: 10px;
-      display: inline-flex;
-      float: right;
 
-      ul {
-        li {
-          display: inline-flex;
-          margin-right: 40px;
+    @include respond-to($phone) {
+      .brand {
+        margin-left: 28px;
+      }
+    }
 
-          a {
-            text-decoration: none;
-            color: #ffffff;
+    @include respond-to("(min-width: 800px)") {
+      .nav-primary {
+        margin: 10px;
+        display: inline-flex;
+        float: right;
+
+        ul {
+          margin-top: 15px;
+
+          li {
+            display: inline-flex;
+            margin-right: 40px;
+
+            a {
+              text-decoration: none;
+              color: #ffffff;
+            }
           }
+        }
+      }
+
+      #btn {
+        display: none;
+      }
+    }
+    @include respond-to($tablet-portrait-menu) {
+      .nav-primary {
+        float: right;
+        display: inline-flex;
+
+        div ul {
+          display: none;
+          position: absolute;
+          top: 50px;
+          left: 0;
+          z-index: 2;
+
+          li {
+            display: flex;
+            margin:  10px 20px;
+            width: 100%;
+
+            a {
+              font-family: "Nunito Sans", serif;
+              font-weight: 700;
+              text-decoration: none;
+              color: #ffffff;
+            }
+          }
+        }
+
+        #btn {
+          position: absolute;
+          right: 0;
+          top: 0;
+          margin: 10px 30px;
+          font-size: 38px;
+          display: inline-flex;
+          text-decoration: none;
+          color: #ffffff;
         }
       }
     }
