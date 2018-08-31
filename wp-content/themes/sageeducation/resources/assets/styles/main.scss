@@ -1,5 +1,10 @@
+@import "~bootstrap/scss/bootstrap";
 @import "common/variables";
 @import "common/normalize";
+
+
+//@import "../../../node_modules/bootstrap/scss/bootstrap";
+
 
 /** Import everything from autoload */
 @import "./autoload/**/*";
@@ -18,7 +23,7 @@
 @import "components/comments";
 @import "components/forms";
 @import "components/wp-classes";
-@import "components/slyder";
+@import "components/slider";
 @import "layouts/header";
 @import "layouts/sidebar";
 @import "layouts/footer";

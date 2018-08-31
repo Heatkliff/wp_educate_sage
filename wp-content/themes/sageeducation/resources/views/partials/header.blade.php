@@ -1,6 +1,6 @@
 <div id="layer"></div>
 <header class="banner">
-  <div class="container">
+  <div class="menu-header">
     <a class="brand" href="{{ home_url('/') }}">
       <img src="<?php echo get_site_icon_url() ?>">
       <div class="blog_info">{{ get_bloginfo('name', 'display') }}</div>

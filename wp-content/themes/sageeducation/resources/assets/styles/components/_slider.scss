@@ -13,10 +13,15 @@
       list-style-type: none;
       float: left;
       width: 100vw;
-      height: 700px;
       position: relative;
+      @include respond-to($tablet-portrait-menu){
+        height: 500px;
+      }
+      @include respond-to($more-tablet-portrait){
+        height: 700px;
+      }
 
-      .item{
+      .item {
         background-size: auto 100%;
         background-size: cover;
         background-position: center;
@@ -24,7 +29,7 @@
         width: 100%;
         height: 100%;
       }
-      .night-slide{
+      .night-slide {
         background-color: black;
         opacity: 0.9;
         position: absolute;
@@ -33,16 +38,17 @@
         width: 100%;
         height: 100%;
       }
-      .content-clider{
+      .content-clider {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
         .block-content-slider {
+
           position: absolute;
           width: 100%;
-          top:50%;
+          top: 50%;
           transform: translateY(-50%);
 
           h1, h3, .button-slider {
@@ -54,29 +60,45 @@
             text-align: center;
           }
           h1 {
-            font-size: 72px;
             text-align: center;
+            @include respond-to($tablet-portrait-menu){
+              font-size: 36px;
+            }
+            @include respond-to($more-tablet-portrait){
+              font-size: 72px;
+            }
           }
           h3 {
             width: 100%;
-            font-size: 24px;
             text-align: center;
+            @include respond-to($tablet-portrait-menu){
+              font-size: 14px;
+            }
+            @include respond-to($more-tablet-portrait){
+              font-size: 24px;
+            }
           }
-          .button-slider {
-            display: inline;
-            margin: 26px auto;
-            //display: block;
-            border-radius: 30%;
-            background-color: #27ae60;
-            padding: 20px;
-            font-size: 24px;
+          .button {
             text-align: center;
-            left: 0;
 
-            a {
-              font-weight: 700;
-              text-decoration: none;
-              color: #ffffff;
+            .btn-success{
+              border-radius: 35%;
+              background-color: #27ae60;
+              border-color: #27ae60;
+              padding: 20px;
+
+              @include respond-to($tablet-portrait-menu){
+                font-size: 24px;
+              }
+              @include respond-to($more-tablet-portrait){
+                font-size: 18px;
+              }
+
+              a {
+                font-weight: 700;
+                text-decoration: none;
+                color: #ffffff;
+              }
             }
           }
         }
@@ -87,23 +109,36 @@
 
   .nav {
     position: relative;
-    left: 47%;
     bottom: 20px;
+    display: block !important;
+    @include respond-to($more-tablet-portrait){
+      left: 46%;
+    }
+
+    @include respond-to($tablet-portrait){
+      left: 43%;
+    }
+
+    @include respond-to($phone){
+      left: 37%;
+    }
 
     span {
       opacity: 0.9;
-      background: #fff;
+      background: none;
       margin: 0 8px 0 0;
       width: 16px;
       height: 16px;
       border-radius: 8px;
+      border: 2px solid #ffffff;
       cursor: pointer;
       overflow: hidden;
-      display: block;
+      display: block !important;
       float: left;
       box-shadow: 0 1px 2px #000;
 
       &.on {
+        border-color: #2e9419;
         background: #2e9419;
       }
     }
