@@ -38,7 +38,7 @@
         width: 100%;
         height: 100%;
       }
-      .content-clider {
+      .content-slider {
         position: absolute;
         top: 0;
         left: 0;
@@ -82,16 +82,21 @@
             text-align: center;
 
             .btn-success{
-              border-radius: 35%;
+              //border-top-left-radius: 50px;
+              //border-bottom-left-radius: 50px;
+              //border-top-right-radius: 50px;
+              //border-bottom-right-radius: 50px;
+              margin-top: 30px;
+              border-radius: 50px;
               background-color: #27ae60;
               border-color: #27ae60;
-              padding: 20px;
+              padding: 10px 20px;
 
               @include respond-to($tablet-portrait-menu){
-                font-size: 24px;
+                font-size: 18px;
               }
               @include respond-to($more-tablet-portrait){
-                font-size: 18px;
+                font-size: 24px;
               }
 
               a {
@@ -109,19 +114,11 @@
 
   .nav {
     position: relative;
-    bottom: 20px;
-    display: block !important;
-    @include respond-to($more-tablet-portrait){
-      left: 46%;
-    }
+    bottom: 40px;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
 
-    @include respond-to($tablet-portrait){
-      left: 43%;
-    }
-
-    @include respond-to($phone){
-      left: 37%;
-    }
 
     span {
       opacity: 0.9;

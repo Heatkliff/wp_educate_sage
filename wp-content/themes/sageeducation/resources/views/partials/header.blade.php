@@ -1,3 +1,7 @@
+{{--Get time autoslide--}}
+{!! '<script> window.slide_time = {"autoslide_time":'.get_field("autoslide_time", "option").'}</script>' !!}
+
+
 <div id="layer"></div>
 <header class="banner">
   <div class="menu-header">

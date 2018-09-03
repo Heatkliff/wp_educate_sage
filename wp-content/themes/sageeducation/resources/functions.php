@@ -6,6 +6,7 @@
 
 use Roots\Sage\Config;
 use Roots\Sage\Container;
+define('ACF_EARLY_ACCESS', '5');
 
 /**
  * Helper function for prettying up errors

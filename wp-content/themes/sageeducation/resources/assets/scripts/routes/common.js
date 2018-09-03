@@ -1,10 +1,10 @@
 export default {
   init() {
+
     // JavaScript to be fired on all pages
   },
   finalize() {
     // JavaScript to be fired on all pages, after page specific JS is fired
-
 
     var openBtn = $('#btn'),
         slideMenu = $('.nav-primary div ul'),
@@ -45,25 +45,28 @@ export default {
       $(sl).find("span").removeClass("on");
       $(this).addClass("on");
       var obj = $(this).attr("rel");
+      console.log(obj);
+      console.log(sl);
       sliderJS(obj, sl);
       return false;
     });
 
 
     window.onload = function autoscroll() {
-      // var checks = $(document).find('.slider .nav span');
-      // var check_now = 1;
-      //
-      // setInterval(function() {
-      //   console.log('Checks = ' + checks.length + ". Check now - " + check_now);
-      //   checks[check_now].click();
-      //
-      //   if (check_now+1 < checks.length){
-      //     check_now += 1;
-      //   }else {
-      //     check_now = 0;
-      //   }
-      // }, 5000);
+      console.log( window.slide_time['autoslide_time'] * 1000);
+      var checks = $(document).find('.slider .nav span');
+      var check_now = 1;
+
+      setInterval(function() {
+        // console.log('Checks = ' + checks.length + ". Check now - " + check_now);
+        checks[check_now].click();
+
+        if (check_now+1 < checks.length){
+          check_now += 1;
+        }else {
+          check_now = 0;
+        }
+      }, window.slide_time['autoslide_time'] * 1000);
 
     };
   },
