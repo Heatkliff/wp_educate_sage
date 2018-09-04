@@ -61,17 +61,3 @@ function custom_post_features() {
 
 }
 add_action( 'init', 'custom_post_features', 0 );
-
-
-function my_acf_load_field( $field ) {
-
-    $field['choices'] = array();
-    // if has rows
-
-
-
-    return $field;
-
-}
-
-add_filter('acf/load_field/name=features_test_test', 'my_acf_load_field');

@@ -1,0 +1,129 @@
+.courses-block{
+  margin: 20px auto;
+  max-width: 1200px;
+
+  .courses-block-title{
+    text-align: center;
+    color: #1a1a1a;
+    font-family: "Nunito Sans", serif;
+    font-weight: 700;
+
+    @include respond-to($more-tablet-portrait){
+      font-size: 48px;
+      padding-top: 65px;
+      padding-bottom: 40px;
+    }
+
+    @include respond-to($tablet-portrait){
+      font-size: 48px;
+      padding-top: 50px;
+      padding-bottom: 40px;
+    }
+
+    @include respond-to($phone){
+      font-size: 36px;
+      padding-top: 35px;
+      padding-bottom: 40px;
+    }
+  }
+
+  .courses-pre-posts{
+    display: flex;
+    flex-wrap: wrap;
+
+    .courses-pre-post{
+      position: relative;
+      float: left;
+      background-color: #f1f1f1;
+      margin: 35px auto;
+      width: 30%;
+      padding-bottom: 30px;
+
+      .image-pre-post img{
+        width: 100%;
+        height: 245px;
+      }
+
+      .title-pre-post{
+        margin-left:  25px;
+        font-weight: 700;
+        @include respond-to($more-tablet-portrait){
+          font-size: 30px;
+        }
+        @include respond-to($tablet-portrait){
+          font-size: 27px;
+        }
+        @include respond-to($phone){
+          font-size: 24px;
+        }
+      }
+
+      .short-text-pre-post{
+        margin: 20px 25px;
+        font-family: Montserrat, serif;
+        font-weight: 400;
+        @include respond-to($more-tablet-portrait){
+          font-size: 18px;
+        }
+        @include respond-to($tablet-portrait){
+          font-size: 16px;
+        }
+        @include respond-to($phone){
+          font-size: 14px;
+        }
+      }
+
+      hr{
+        color: #464748;;
+      }
+
+      .time-pre-post{
+        text-align: center;
+        font-size: 24px;
+        font-weight: 700;
+        //border-bottom: 2px solid #464748;
+
+        hr{
+          width: 70%;
+        }
+      }
+
+      .teacher-pre-post{
+        text-align: center;
+        font-size: 24px;
+        font-weight: 700;
+        //border-bottom: 2px solid #464748;
+        hr{
+          width: 70%;
+        }
+      }
+
+      .join-courses {
+        text-align: center;
+
+        .btn-success {
+          width: 80%;
+          border-radius: 50px;
+
+          a {
+            text-decoration: none;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  .load_all {
+    text-align: center;
+
+    .btn-light {
+      border-radius: 50px;
+
+      .load_more {
+        color: #8f8f8f;
+        font-size: 24px;
+        font-weight: 700;
+      }
+    }
+  }
+}
