@@ -1,5 +1,4 @@
 <div class="education-block">
-    {{--<pre>@php var_dump(get_field('educate_block','option')) @endphp</pre>--}}
     @php $content_ed_block = get_field('educate_block','option') @endphp
     <div class="image-block" style='background-image: url("{!! $content_ed_block["image_poster"]["url"] !!}")'></div>
     <div class="educate-content">

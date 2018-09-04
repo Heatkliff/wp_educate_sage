@@ -1,0 +1,89 @@
+.features-block {
+  margin-top: 50px;
+  padding-bottom: 60px;
+  width: 100%;
+  background-color: #f1f1f1;
+
+  .features-posts {
+    margin: 20px auto;
+    max-width: 1200px;
+
+    .features-title{
+      text-align: center;
+      color: #1a1a1a;
+      font-family: "Nunito Sans", serif;
+      font-weight: 700;
+      @include respond-to($more-tablet-portrait){
+        padding-top: 65px;
+        font-size: 48px;
+      }
+      @include respond-to($tablet-portrait){
+        font-size: 48px;
+        padding-top: 50px;
+      }
+      @include respond-to($phone){
+        font-size: 36px;
+        padding-top: 35px;
+      }
+
+    }
+
+    .features-blocks{
+      display: flex;
+      flex-wrap: wrap;
+
+      .features-post {
+        margin: auto;
+        margin-top: 60px;
+        text-align: center;
+        @include respond-to($more-tablet-portrait){
+          width: 30%;
+        }
+        @include respond-to($tablet-portrait){
+          width: 45%;
+        }
+        @include respond-to($phone){
+          width: 90%;
+        }
+
+        .features-image {
+          margin: 20px auto;
+          width: 150px;
+          height: 150px;
+
+          img{
+            border-radius: 50%;
+          }
+        }
+
+        .features-post-title{
+          margin-bottom: 15px;
+          font-weight: 700;
+          @include respond-to($more-tablet-portrait){
+            font-size: 30px;
+          }
+          @include respond-to($tablet-portrait){
+            font-size: 27px;
+          }
+          @include respond-to($phone){
+            font-size: 24px;
+          }
+        }
+
+        .features-post-content{
+          font-family: Montserrat, serif;
+          font-weight: 400;
+          @include respond-to($more-tablet-portrait){
+            font-size: 18px;
+          }
+          @include respond-to($tablet-portrait){
+            font-size: 16px;
+          }
+          @include respond-to($phone){
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
