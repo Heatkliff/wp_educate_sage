@@ -10,8 +10,27 @@
         @endforeach
 
     </div>
+
     <div class="load_all">
-        <button type="button" class="btn btn-light"><a class="load_more" href="#">View All</a></button>
+        <pre>@php
+                $all_courses = new WP_Query(
+                array(
+                    'post_type' => 'courses',
+                ));
+                //var_dump($all_courses)
+            @endphp</pre>
+
+
+        @if (  $wp_query->max_num_pages > 1 )
+            <script>
+                var ajaxurl = '{!! site_url()  !!}/wp-admin/admin-ajax.php';
+                var true_posts = '{!! serialize($wp_query->query_vars) !!}';
+                var max_pages = '{!! $wp_query->max_num_pages  !!}';
+                console.log("ajaxurl - " + ajaxurl + " | true_posts - " + true_posts + " | max_pages" + max_pages)
+            </script>
+        @endif
+        <button type="button" id="true_loadmore" class="btn btn-light">View All</button>
+        <br>
     </div>
 </div>
 <br>

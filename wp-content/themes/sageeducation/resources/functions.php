@@ -6,6 +6,7 @@
 
 use Roots\Sage\Config;
 use Roots\Sage\Container;
+
 define('ACF_EARLY_ACCESS', '5');
 
 /**
@@ -39,7 +40,7 @@ if (version_compare('4.7.0', get_bloginfo('version'), '>=')) {
  * Ensure dependencies are loaded
  */
 if (!class_exists('Roots\\Sage\\Container')) {
-    if (!file_exists($composer = __DIR__.'/../vendor/autoload.php')) {
+    if (!file_exists($composer = __DIR__ . '/../vendor/autoload.php')) {
         $sage_error(
             __('You must run <code>composer install</code> from the Sage directory.', 'sage'),
             __('Autoloader not found.', 'sage')
@@ -86,8 +87,67 @@ array_map(
 Container::getInstance()
     ->bindIf('config', function () {
         return new Config([
-            'assets' => require dirname(__DIR__).'/config/assets.php',
-            'theme' => require dirname(__DIR__).'/config/theme.php',
-            'view' => require dirname(__DIR__).'/config/view.php',
+            'assets' => require dirname(__DIR__) . '/config/assets.php',
+            'theme' => require dirname(__DIR__) . '/config/theme.php',
+            'view' => require dirname(__DIR__) . '/config/view.php',
         ]);
     }, true);
+
+
+add_action('wp_ajax_load_more', 'load_more');
+add_action('wp_ajax_nopriv_load_more', 'load_more');
+
+function load_more()
+{
+    $add_courses = "";
+    $courses_in_page = array();
+    $get_courses_in_page = get_field('dedicated_courses_posts', 'option');
+    foreach ($get_courses_in_page as $course) {
+        array_push($courses_in_page, $course->ID);
+    }
+    $all_courses = new WP_Query(
+        array(
+            'post__not_in' => $courses_in_page,
+            'posts_per_page' => -1,
+            'post_type' => 'courses_type',
+        ));
+    foreach ($all_courses->posts as $course) {
+        $course_fields = get_field('fields_cources_post', $course->ID, 'option');
+        $add_courses = $add_courses.course_post_output($course,$course_fields);
+//        var_dump($course);
+    }
+    echo $add_courses;
+    die;
+}
+
+function course_post_output($course, $course_fields)
+{
+    return '<div class="courses-pre-post">
+    <div class="image-pre-post">
+        <img src="'.get_the_post_thumbnail_url($course->ID, "medium").'" alt="">
+    </div>
+    <div class="title-pre-post">
+        '.$course->post_title.'
+    </div>
+    <div class="short-text-pre-post">
+        '.$course_fields["short_text_cources"] .'
+    </div>
+    <hr>
+    <div class="time-pre-post">
+        Time : '.$course_fields["time_field_cource"] .'
+        <hr>
+    </div>
+    <div class="teacher-pre-post">
+        Teacher : '.get_the_title($course_fields["teacher_field_cource"]).'
+        <hr>
+    </div>
+    <div class="join-courses">
+        <button type="button" class="btn btn-success">
+            <a href="#">
+                Join Now
+            </a>
+        </button>
+    </div>
+</div>
+';
+}

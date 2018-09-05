@@ -68,5 +68,39 @@ export default {
             }, window.slide_time['autoslide_time'] * 1000);
 
         };
+
+        /////////////////////////////////////////////////////////////////////////////////////////////
+
+        // ajax load posts
+
+        $(document).on("click", "#true_loadmore", function () {
+            console.log( window.ajax.ajax_url);
+            $(this).text('Loading...'); // изменяем текст кнопки, вы также можете добавить прелоадер
+            var data = {
+                'action': 'load_more',
+            };
+            $.ajax({
+                url: window.ajax.ajax_url, // обработчик
+                data: data, // данные
+                type:'POST', // тип запроса
+                success:function(data){
+                    console.log(data);
+                    if( data ) {
+                        $('.courses-pre-post:last').after(data); // вставляем новые посты
+                        $('#true_loadmore').remove();
+                    }
+                },
+            });
+        })
+
+        window.onload = function() {
+            console.log(window.innerWidth);
+            if(window.innerWidth < 790) {
+                $('#true_loadmore').click();
+                var block_courses = $('.courses-pre-posts');
+                block_courses.removeClass('courses-pre-posts');
+                block_courses.addClass('courses-pre-posts-mobile')
+            }
+        };
     },
 };

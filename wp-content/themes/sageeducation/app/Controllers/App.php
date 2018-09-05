@@ -30,4 +30,18 @@ class App extends Controller
         }
         return get_the_title();
     }
+
+    public static function customHeaderJson()
+    {
+//        echo 'console.log('.json_encode(array(
+//                    'ajax' => ['ajax_url' => admin_url('admin-ajax.php'),
+//                        'ajax_nonce' => wp_create_nonce('my_nonce'),])
+//            ).')';
+        return json_encode(array(
+                'ajax_url' => admin_url('admin-ajax.php'),
+                'ajax_nonce' => wp_create_nonce('my_nonce'),)
+        );
+
+
+    }
 }

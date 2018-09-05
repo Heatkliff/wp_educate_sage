@@ -5,3 +5,5 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
   @php wp_head() @endphp
 </head>
+{!! '<script> window.slide_time = {"autoslide_time":'.get_field("autoslide_time", "option").'}' !!}
+{!! 'window.ajax = '.\App\Controllers\App::customHeaderJson().'</script>' !!}
