@@ -53,12 +53,11 @@ export default {
         });
 
 
-        $(document).ready(function autoscroll() {
+        window.onload = function autoscroll() {
             var checks = $(document).find('.slider .nav span');
             var check_now = 1;
 
             setInterval(function () {
-                console.log('Test');
                 checks[check_now].click();
 
                 if (check_now + 1 < checks.length) {
@@ -68,14 +67,14 @@ export default {
                 }
             }, window.slide_time['autoslide_time'] * 1000);
 
-        });
+        };
 
         /////////////////////////////////////////////////////////////////////////////////////////////
 
         // ajax load posts
 
         $(document).on("click", "#true_loadmore", function () {
-            console.log(window.ajax.ajax_url);
+            console.log( window.ajax.ajax_url);
             $(this).text('Loading...');
             var data = {
                 'action': 'load_more',
@@ -83,9 +82,9 @@ export default {
             $.ajax({
                 url: window.ajax.ajax_url,
                 data: data,
-                type: 'POST',
-                success: function (data) {
-                    if (data) {
+                type:'POST',
+                success:function(data){
+                    if( data ) {
                         $('.courses-pre-post:last').after(data);
                         $('#true_loadmore').remove();
                     }
@@ -100,9 +99,9 @@ export default {
             $.ajax({
                 url: window.ajax.ajax_url,
                 data: data,
-                type: 'POST',
-                success: function (data) {
-                    if (data) {
+                type:'POST',
+                success:function(data){
+                    if( data ) {
                         $('.courses-pre-post:last').after(data);
                         $('#true_loadmore').remove();
                     }
@@ -110,18 +109,21 @@ export default {
             });
 
         });
-        $(document).on('pageinit', function () {
-            $(".courses-block-mobile .courses-pre-posts").swiperight(function () {
+        $(document).on('pageinit', function(){
+            $(".courses-block-mobile .courses-pre-posts").swiperight(function() {
+                console.log("12345");
             });
         });
-        window.onload = function () {
+        window.onload = function() {
             console.log(window.innerWidth);
-            if (window.innerWidth < 790) {
+            if(window.innerWidth < 790) {
+                'use strict';
                 promise
                     .then(
-                        slider_courses()
-                    );
+                            slider_courses()
+                        );
             }
+
 
 
         };
@@ -133,43 +135,44 @@ export default {
             block_courses.removeClass('courses-block');
             block_courses.addClass('courses-block-mobile');
             var slides = $(".courses-block-mobile .courses-pre-posts").children(".courses-pre-post");
-            var width = $(".courses-block-mobile .courses-pre-posts .courses-pre-post").width() + 20;
+            var width = $(".courses-block-mobile .courses-pre-posts .courses-pre-post").width()+20;
             console.log(slides.length);
+            // var margin_element = $(".courses-block-mobile .courses-pre-posts .courses-pre-post");
             var i = slides.length;
-            var slides_position = (i / 2) * width;
-            var offset = i * width;
-            if ($(window).width() < '480'){
-                $.each($(".courses-pre-post"), function () {
-                    this.setAttribute("style", "width: " + ($(window).width()/100)*90 + "px");
-                })
-            }
+            var offset = (i + 1) * (width);
+            // var width_slider_block = offset;
+            // var cheki = i-1;
+            $(".courses-block-mobile .courses-pre-posts").css('width',offset);
+            $(".courses-block-mobile .courses-pre-posts").css("transform","translate3d(-"+(i/2)*width+"px, 0px, 0px)");
+            // for (var j=0; j < slides.length; j++) {
+            //     if (j==slides.length/2) {
+            //         $(".courses-block-mobile .navigation").append("<div class='dot active'></div>");
+            //     }
+            //     else {
+            //         $(".courses-block-mobile .navigation").append("<div class='dot'></div>");
+            //     }
+            // }
+            // offset = 0;
+            // i = 0;
+            // $('.courses-block-mobile .navigation .dot').click(function(){
+            //     $(".courses-block-mobile .navigation .active").removeClass("active");
+            //     $(this).addClass("active");
+            //     i = $(this).index();
+            //     offset = i * width;
+            //     console.log('offset - ' + offset + ' | width - ' + width);
+            //     $(".courses-block-mobile .courses-pre-posts").css("transform","translate3d(-"+offset+"px, 0px, 0px)");
+            // });
 
-            $(".courses-block-mobile .courses-pre-posts").css('width', offset);
-            $(".courses-block-mobile .courses-pre-posts").css("transform", "translate3d(-" + slides_position + "px, 0px, 0px)");
-
-
-            $(".courses-block-mobile .courses-pre-posts").on("swipeleft", function () {
-                if (slides_position<offset-width) {
-                    slides_position += width;
-                    $(".courses-block-mobile .courses-pre-posts").css("transform", "translate3d(-" + slides_position + "px, 0px, 0px)");
-                }
+            $(".courses-block-mobile .courses-pre-posts").on("swiperight",function(){
+                console.log("12345");
+                $(".courses-block-mobile .courses-pre-posts").css("transform","translate3d("+width+"px, 0px, 0px)");
             });
 
-            $(".courses-block-mobile .courses-pre-posts").on("swiperight", function () {
-                if (slides_position>0) {
-                    slides_position -= width;
-                    $(".courses-block-mobile .courses-pre-posts").css("transform", "translate3d(-" + slides_position + "px, 0px, 0px)");
-                }
+            $(".courses-block-mobile .courses-pre-posts").on("swipeleft",function(){
+                console.log("54321");
+                $(".courses-block-mobile .courses-pre-posts").css("transform","translate3d(-"+width+"px, 0px, 0px)");
             });
-
-            $(".courses-block-mobile .courses-pre-posts").on("swipeup",function () {
-                return true;
-            })
-
-            $(".courses-block-mobile .courses-pre-posts").on("swipedown",function () {
-                return true;
-            })
-            //        width_slider_block
+        //        width_slider_block
         }
     },
 };

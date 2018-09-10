@@ -1,37 +1,37 @@
-.courses-block{
+.courses-block {
   margin: 20px auto;
   max-width: 1200px;
 
-  .courses-block-title{
+  .courses-block-title {
     text-align: center;
     color: #1a1a1a;
     font-family: "Nunito Sans", serif;
     font-weight: 700;
 
-    @include respond-to($more-tablet-portrait){
+    @include respond-to($more-tablet-portrait) {
       font-size: 48px;
       padding-top: 65px;
       padding-bottom: 40px;
     }
 
-    @include respond-to($tablet-portrait){
+    @include respond-to($tablet-portrait) {
       font-size: 48px;
       padding-top: 50px;
       padding-bottom: 40px;
     }
 
-    @include respond-to($phone){
+    @include respond-to($phone) {
       font-size: 36px;
       padding-top: 35px;
       padding-bottom: 40px;
     }
   }
 
-  .courses-pre-posts{
+  .courses-pre-posts {
     display: flex;
     flex-wrap: wrap;
 
-    .courses-pre-post{
+    .courses-pre-post {
       position: relative;
       float: left;
       background-color: #f1f1f1;
@@ -39,61 +39,61 @@
       padding-bottom: 30px;
       width: 30%;
 
-      .image-pre-post img{
+      .image-pre-post img {
         width: 100%;
         height: 245px;
       }
 
-      .title-pre-post{
-        margin-left:  25px;
+      .title-pre-post {
+        margin-left: 25px;
         font-weight: 700;
-        @include respond-to($more-tablet-portrait){
+        @include respond-to($more-tablet-portrait) {
           font-size: 30px;
         }
-        @include respond-to($tablet-portrait){
+        @include respond-to($tablet-portrait) {
           font-size: 27px;
         }
-        @include respond-to($phone){
+        @include respond-to($phone) {
           font-size: 24px;
         }
       }
 
-      .short-text-pre-post{
+      .short-text-pre-post {
         margin: 20px 25px;
         font-family: Montserrat, serif;
         font-weight: 400;
-        @include respond-to($more-tablet-portrait){
+        @include respond-to($more-tablet-portrait) {
           font-size: 18px;
         }
-        @include respond-to($tablet-portrait){
+        @include respond-to($tablet-portrait) {
           font-size: 16px;
         }
-        @include respond-to($phone){
+        @include respond-to($phone) {
           font-size: 14px;
         }
       }
 
-      hr{
+      hr {
         color: #464748;;
       }
 
-      .time-pre-post{
+      .time-pre-post {
         text-align: center;
         font-size: 24px;
         font-weight: 700;
         //border-bottom: 2px solid #464748;
 
-        hr{
+        hr {
           width: 70%;
         }
       }
 
-      .teacher-pre-post{
+      .teacher-pre-post {
         text-align: center;
         font-size: 24px;
         font-weight: 700;
         //border-bottom: 2px solid #464748;
-        hr{
+        hr {
           width: 70%;
         }
       }
@@ -112,8 +112,14 @@
         }
       }
     }
+
+    .navigation {
+      display: none;
+    }
   }
+
   .load_all {
+    width: 100%;
     text-align: center;
 
     .btn-light {
@@ -123,6 +129,191 @@
         color: #8f8f8f;
         font-size: 24px;
         font-weight: 700;
+      }
+    }
+  }
+}
+
+.courses-block-mobile {
+  margin: 20px auto;
+  overflow: hidden; /* Скрываем всё что за блоком слайдера */
+  position: relative;
+
+  .courses-block-title {
+    text-align: center;
+    color: #1a1a1a;
+    font-family: "Nunito Sans", serif;
+    font-weight: 700;
+
+    @include respond-to($more-tablet-portrait) {
+      font-size: 48px;
+      padding-top: 65px;
+      padding-bottom: 40px;
+    }
+
+    @include respond-to($tablet-portrait) {
+      font-size: 48px;
+      padding-top: 50px;
+      padding-bottom: 40px;
+    }
+
+    @include respond-to($phone) {
+      font-size: 36px;
+      padding-top: 35px;
+      padding-bottom: 40px;
+    }
+  }
+
+  .courses-pre-posts {
+    position: relative;
+    //display: flex;
+    //flex-wrap: nowrap;
+
+    .courses-pre-post {
+      display: block;
+      //position: relative;
+      float: left;
+      background-color: #f1f1f1;
+      margin: 35px 17px;
+      padding-bottom: 30px;
+      width: 300px;
+
+      .image-pre-post img {
+        width: 100%;
+        height: 245px;
+      }
+
+      .title-pre-post {
+        margin-left: 25px;
+        font-weight: 700;
+        @include respond-to($more-tablet-portrait) {
+          font-size: 30px;
+        }
+        @include respond-to($tablet-portrait) {
+          font-size: 27px;
+        }
+        @include respond-to($phone) {
+          font-size: 24px;
+        }
+      }
+
+      .short-text-pre-post {
+        margin: 20px 25px;
+        font-family: Montserrat, serif;
+        font-weight: 400;
+        @include respond-to($more-tablet-portrait) {
+          font-size: 18px;
+        }
+        @include respond-to($tablet-portrait) {
+          font-size: 16px;
+        }
+        @include respond-to($phone) {
+          font-size: 14px;
+        }
+      }
+
+      hr {
+        color: #464748;;
+      }
+
+      .time-pre-post {
+        text-align: center;
+        font-size: 24px;
+        font-weight: 700;
+        //border-bottom: 2px solid #464748;
+
+        hr {
+          width: 70%;
+        }
+      }
+
+      .teacher-pre-post {
+        text-align: center;
+        font-size: 24px;
+        font-weight: 700;
+        //border-bottom: 2px solid #464748;
+        hr {
+          width: 70%;
+        }
+      }
+
+      .join-courses {
+        text-align: center;
+
+        .btn-success {
+          width: 80%;
+          border-radius: 50px;
+
+          a {
+            text-decoration: none;
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    .navigation {
+      display: none;
+    }
+  }
+
+  .load_all {
+    width: 100%;
+    text-align: center;
+
+    .btn-light {
+      border-radius: 50px;
+
+      .load_more {
+        color: #8f8f8f;
+        font-size: 24px;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+@include respond-to($phone) {
+  .courses-block-mobile {
+    overflow: hidden;
+    position: relative;
+    width: 95%;
+    height: 800px;
+    margin: 0 auto;
+
+    .courses-pre-posts {
+      transform: translateY(2%);
+      position: relative;
+      height: 700px;
+      transition: 1s;
+
+      .courses-pre-post {
+        float: left;
+        height: 580px;
+        display: block;
+        max-width: 460px;
+        margin: 10px 10px;
+      }
+    }
+
+    .navigation {
+      position: absolute;
+      width: 100%;
+      bottom: 40px;
+      text-align: center;
+
+      .dot {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background: #666666;
+        cursor: pointer;
+        border-radius: 16px;
+        margin: 0 20px;
+        border: 1px solid #666666;
+      }
+      .active {
+        background: #fff;
       }
     }
   }
