@@ -6,4 +6,5 @@
   @php wp_head() @endphp
 </head>
 {!! '<script> window.slide_time = {"autoslide_time":'.get_field("autoslide_time", "option").'}' !!}
+{!! 'window.output_all_courses_in_mobile = {"output_all":'.get_field("output_num_posts_courses", "option").'}' !!}
 {!! 'window.ajax = '.\App\Controllers\App::customHeaderJson().'</script>' !!}

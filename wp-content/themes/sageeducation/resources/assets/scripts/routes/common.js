@@ -58,7 +58,6 @@ export default {
             var check_now = 1;
 
             setInterval(function () {
-                console.log('Test');
                 checks[check_now].click();
 
                 if (check_now + 1 < checks.length) {
@@ -93,38 +92,46 @@ export default {
             });
         });
 
-        let promise = new Promise(() => {
-            var data = {
-                'action': 'load_more',
-            };
-            $.ajax({
-                url: window.ajax.ajax_url,
-                data: data,
-                type: 'POST',
-                success: function (data) {
-                    if (data) {
-                        $('.courses-pre-post:last').after(data);
-                        $('#true_loadmore').remove();
-                    }
-                },
-            });
 
-        });
-        $(document).on('pageinit', function () {
+        window.onload = function () {
             $(".courses-block-mobile .courses-pre-posts").swiperight(function () {
             });
-        });
+        };
         window.onload = function () {
             console.log(window.innerWidth);
-            if (window.innerWidth < 790) {
-                promise
-                    .then(
-                        slider_courses()
-                    );
+            if (window.innerWidth < 490) {
+                if(window.output_all_courses_in_mobile['output_all'] == true){
+                    let promise = new Promise(() => {
+                        var data = {
+                            'action': 'load_more',
+                        };
+                        $.ajax({
+                            url: window.ajax.ajax_url,
+                            data: data,
+                            type: 'POST',
+                            success: function (data) {
+                                if (data) {
+                                    $('.courses-pre-post:last').after(data);
+                                    $('#true_loadmore').remove();
+                                    slider_courses();
+                                }
+                            },
+                        });
+
+                    });
+
+                    promise;
+                }
+
+                if (window.output_all_courses_in_mobile['output_all'] == false || window.output_all_courses_in_mobile['output_all'] == 0) {
+                    slider_courses();
+                }
             }
 
 
         };
+
+        /////////////////////////////////////////////////////////
 
         // Slider courses
 
@@ -133,25 +140,46 @@ export default {
             block_courses.removeClass('courses-block');
             block_courses.addClass('courses-block-mobile');
             var slides = $(".courses-block-mobile .courses-pre-posts").children(".courses-pre-post");
-            var width = $(".courses-block-mobile .courses-pre-posts .courses-pre-post").width() + 20;
-            console.log(slides.length);
-            var i = slides.length;
-            var slides_position = (i / 2) * width;
-            var offset = i * width;
             if ($(window).width() < '480'){
                 $.each($(".courses-pre-post"), function () {
                     this.setAttribute("style", "width: " + ($(window).width()/100)*90 + "px");
                 })
             }
+            var width = $(".courses-block-mobile .courses-pre-posts .courses-pre-post").width() + 20;
+            var i = slides.length;
+            var slides_position = Math.floor(i / 2) * width;
+            var offset = i * width;
+            var now_slide;
 
             $(".courses-block-mobile .courses-pre-posts").css('width', offset);
             $(".courses-block-mobile .courses-pre-posts").css("transform", "translate3d(-" + slides_position + "px, 0px, 0px)");
 
+            for (var j=0; j < slides.length; j++) {
+                if (j==Math.floor(slides.length/2)) {
+                    $(".courses-block-mobile .navigation").append("<div class='dot active'></div>");
+                }
+                else {
+                    $(".courses-block-mobile .navigation").append("<div class='dot'></div>");
+                }
+            }
+            var element, offset_dot;
+            $('.courses-block-mobile .navigation .dot').click(function(){
+                $(".courses-block-mobile .navigation .active").removeClass("active");
+                $(this).addClass("active");
+                element = $(this).index();
+                offset_dot = element * width;
+                slides_position = offset_dot;
+                $(".courses-block-mobile .courses-pre-posts").css("transform","translate3d(-"+offset_dot+"px, 0px, 0px)");
+            });
 
             $(".courses-block-mobile .courses-pre-posts").on("swipeleft", function () {
                 if (slides_position<offset-width) {
                     slides_position += width;
                     $(".courses-block-mobile .courses-pre-posts").css("transform", "translate3d(-" + slides_position + "px, 0px, 0px)");
+                    $(".courses-block-mobile .navigation .active").removeClass("active");
+                    now_slide = slides.length - (offset-slides_position)/width;
+
+                    $(".courses-block-mobile .navigation .dot:eq("+now_slide+")").addClass("active");
                 }
             });
 
@@ -159,17 +187,15 @@ export default {
                 if (slides_position>0) {
                     slides_position -= width;
                     $(".courses-block-mobile .courses-pre-posts").css("transform", "translate3d(-" + slides_position + "px, 0px, 0px)");
+                    $(".courses-block-mobile .navigation .active").removeClass("active");
+                    now_slide = slides.length - (offset-slides_position)/width;
+
+                    $(".courses-block-mobile .navigation .dot:eq("+now_slide+")").addClass("active");
                 }
             });
 
-            $(".courses-block-mobile .courses-pre-posts").on("swipeup",function () {
-                return true;
-            })
 
-            $(".courses-block-mobile .courses-pre-posts").on("swipedown",function () {
-                return true;
-            })
-            //        width_slider_block
+            /////////////////////////////////////////////////////////////
         }
     },
 };

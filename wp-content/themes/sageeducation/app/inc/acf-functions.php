@@ -601,6 +601,33 @@ if( function_exists('acf_add_local_field_group') ):
                 'maxlength' => '',
             ),
             array(
+                'key' => 'field_5b9773c76a44a',
+                'label' => 'Output all posts in mobile',
+                'name' => 'output_num_posts_courses',
+                'type' => 'select',
+                'instructions' => 'Output of all posts or three in mobile version',
+                'required' => 1,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'choices' => array(
+                    'false' => 'Three',
+                    'true' => 'All',
+                ),
+                'default_value' => array(
+                    0 => 'Three',
+                ),
+                'allow_null' => 0,
+                'multiple' => 0,
+                'ui' => 0,
+                'return_format' => 'value',
+                'ajax' => 0,
+                'placeholder' => '',
+            ),
+            array(
                 'key' => 'field_5b8e61b8bc313',
                 'label' => 'Dedicated posts',
                 'name' => 'dedicated_courses_posts',
