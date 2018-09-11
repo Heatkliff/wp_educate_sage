@@ -117,8 +117,9 @@ function load_more()
 //        var_dump($course);
     }
     echo $add_courses;
-    die;
 }
+
+
 
 function course_post_output($course, $course_fields)
 {
@@ -150,4 +151,18 @@ function course_post_output($course, $course_fields)
     </div>
 </div>
 ';
+}
+
+function get_all_teachers(){
+    $returned_posts = [];
+    $all_teachers = new WP_Query(
+        array(
+            'posts_per_page' => -1,
+            'post_type' => 'teachers_type',
+        ));
+    foreach ($all_teachers->posts as $teacher) {
+        $teacher_fields = get_field('position_teacher', $teacher->ID, 'option');
+        array_push($returned_posts, ['post' => $teacher,'position'=>$teacher_fields]);
+    }
+    return $returned_posts;
 }

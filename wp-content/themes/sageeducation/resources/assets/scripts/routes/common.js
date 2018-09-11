@@ -92,15 +92,10 @@ export default {
             });
         });
 
-
-        window.onload = function () {
-            $(".courses-block-mobile .courses-pre-posts").swiperight(function () {
-            });
-        };
         window.onload = function () {
             console.log(window.innerWidth);
             if (window.innerWidth < 490) {
-                if(window.output_all_courses_in_mobile['output_all'] == true){
+                if (window.output_all_courses_in_mobile['output_all'] == true) {
                     let promise = new Promise(() => {
                         var data = {
                             'action': 'load_more',
@@ -140,9 +135,9 @@ export default {
             block_courses.removeClass('courses-block');
             block_courses.addClass('courses-block-mobile');
             var slides = $(".courses-block-mobile .courses-pre-posts").children(".courses-pre-post");
-            if ($(window).width() < '480'){
+            if ($(window).width() < 480) {
                 $.each($(".courses-pre-post"), function () {
-                    this.setAttribute("style", "width: " + ($(window).width()/100)*90 + "px");
+                    this.setAttribute("style", "width: " + ($(window).width() / 100) * 90 + "px");
                 })
             }
             var width = $(".courses-block-mobile .courses-pre-posts .courses-pre-post").width() + 20;
@@ -154,8 +149,8 @@ export default {
             $(".courses-block-mobile .courses-pre-posts").css('width', offset);
             $(".courses-block-mobile .courses-pre-posts").css("transform", "translate3d(-" + slides_position + "px, 0px, 0px)");
 
-            for (var j=0; j < slides.length; j++) {
-                if (j==Math.floor(slides.length/2)) {
+            for (var j = 0; j < slides.length; j++) {
+                if (j == Math.floor(slides.length / 2)) {
                     $(".courses-block-mobile .navigation").append("<div class='dot active'></div>");
                 }
                 else {
@@ -163,40 +158,57 @@ export default {
                 }
             }
             var element, offset_dot;
-            $('.courses-block-mobile .navigation .dot').click(function(){
+            $('.courses-block-mobile .navigation .dot').click(function () {
                 $(".courses-block-mobile .navigation .active").removeClass("active");
                 $(this).addClass("active");
                 element = $(this).index();
                 offset_dot = element * width;
                 slides_position = offset_dot;
-                $(".courses-block-mobile .courses-pre-posts").css("transform","translate3d(-"+offset_dot+"px, 0px, 0px)");
+                $(".courses-block-mobile .courses-pre-posts").css("transform", "translate3d(-" + offset_dot + "px, 0px, 0px)");
             });
 
             $(".courses-block-mobile .courses-pre-posts").on("swipeleft", function () {
-                if (slides_position<offset-width) {
+                if (slides_position < offset - width) {
                     slides_position += width;
                     $(".courses-block-mobile .courses-pre-posts").css("transform", "translate3d(-" + slides_position + "px, 0px, 0px)");
                     $(".courses-block-mobile .navigation .active").removeClass("active");
-                    now_slide = slides.length - (offset-slides_position)/width;
+                    now_slide = slides.length - (offset - slides_position) / width;
 
-                    $(".courses-block-mobile .navigation .dot:eq("+now_slide+")").addClass("active");
+                    $(".courses-block-mobile .navigation .dot:eq(" + now_slide + ")").addClass("active");
                 }
             });
 
             $(".courses-block-mobile .courses-pre-posts").on("swiperight", function () {
-                if (slides_position>0) {
+                if (slides_position > 0) {
                     slides_position -= width;
                     $(".courses-block-mobile .courses-pre-posts").css("transform", "translate3d(-" + slides_position + "px, 0px, 0px)");
                     $(".courses-block-mobile .navigation .active").removeClass("active");
-                    now_slide = slides.length - (offset-slides_position)/width;
+                    now_slide = slides.length - (offset - slides_position) / width;
 
-                    $(".courses-block-mobile .navigation .dot:eq("+now_slide+")").addClass("active");
+                    $(".courses-block-mobile .navigation .dot:eq(" + now_slide + ")").addClass("active");
                 }
             });
-
-
-            /////////////////////////////////////////////////////////////
         }
+
+        /////////////////////////////////////////////////////////////
+        // slider teachers
+
+        $(document).ready(function() {
+            if (window.innerWidth < 480) {
+                var num_teachers = $('.teachers-posts .teacher-post').length;
+                var width_carouserl_teacher = 190 * num_teachers;
+                $('.teachers-posts').attr("style", "width: " + width_carouserl_teacher + "px");
+
+                for (var j = 0; j < num_teachers/2; j++) {
+                    if (j == Math.floor(num_teachers / 4)) {
+                        $(".teachers-block .navigation-teacher").append("<div class='dot active'></div>");
+                    }
+                    else {
+                        $(".teachers-block .navigation-teacher").append("<div class='dot'></div>");
+                    }
+                }
+            }
+        });
     },
 };
 
