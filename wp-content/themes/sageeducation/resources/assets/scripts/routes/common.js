@@ -193,22 +193,41 @@ export default {
         /////////////////////////////////////////////////////////////
         // slider teachers
 
-        $(document).ready(function() {
+        $(document).ready(function () {
             if (window.innerWidth < 480) {
-                var num_teachers = $('.teachers-posts .teacher-post').length;
-                var width_carouserl_teacher = 190 * num_teachers;
-                $('.teachers-posts').attr("style", "width: " + width_carouserl_teacher + "px");
 
-                for (var j = 0; j < num_teachers/2; j++) {
-                    if (j == Math.floor(num_teachers / 4)) {
-                        $(".teachers-block .navigation-teacher").append("<div class='dot active'></div>");
-                    }
-                    else {
-                        $(".teachers-block .navigation-teacher").append("<div class='dot'></div>");
-                    }
-                }
+                $('.teachers-posts').slick({
+                    dots: false,
+                    centerMode: true,
+                    centerPadding: '20px',
+                    slidesToShow: 1,
+                    arrows: false,
+                    autoplay: true,
+                    variableWidth: true,
+                })
+                work_dots_teachers();
+
             }
         });
+
+        function work_dots_teachers() {
+            $('.navigation-teacher .dot-teacher:eq(0)').on("click", function () {
+                $('.teachers-posts').slick('slickGoTo', parseInt($('.teachers-posts .slick-active').attr('data-slick-index')) - 2);
+                console.log($('.teachers-posts .slick-active').attr('data-slick-index') - 2);
+            })
+            $('.navigation-teacher .dot-teacher:eq(1)').on("click", function () {
+                $('.teachers-posts').slick('slickGoTo', parseInt($('.teachers-posts .slick-active').attr('data-slick-index')) - 1);
+                console.log($('.teachers-posts .slick-active').attr('data-slick-index') - 1);
+            })
+            $('.navigation-teacher .dot-teacher:eq(3)').on("click", function () {
+                $('.teachers-posts').slick('slickGoTo', parseInt($('.teachers-posts .slick-active').attr('data-slick-index')) + 1);
+                console.log(parseInt($('.teachers-posts .slick-active').attr('data-slick-index')) + 1);
+            })
+            $('.navigation-teacher .dot-teacher:eq(4)').on("click", function () {
+                $('.teachers-posts').slick('slickGoTo', parseInt($('.teachers-posts .slick-active').attr('data-slick-index')) + 2);
+                console.log(parseInt($('.teachers-posts .slick-active').attr('data-slick-index')) + 2);
+            })
+        }
     },
 };
 

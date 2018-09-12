@@ -6,6 +6,7 @@
 
     .teachers-block-title {
       padding-top: 80px;
+      line-height: 30px;
       color: #1a1a1a;
       font-family: "Nunito Sans", serif;
       font-size: 48px;
@@ -15,39 +16,42 @@
     .teachers-posts {
       text-align: justify;
       max-width: 1200px;
+      line-height: 30px;
       margin: auto;
       display: flex;
       flex-wrap: wrap;
 
       .teacher-post {
-        width: 30%;
+        width: 28%;
         margin: 40px 0 40px 38px;
         display: flex;
         flex-wrap: nowrap;
 
-        .teacher-image-post{
-          img{
+        .teacher-image-post {
+          img {
             width: 100px;
             height: 100px;
             border-radius: 50%;
           }
         }
 
-        .teacher-content{
+        .teacher-content {
           display: flex;
           flex-wrap: wrap;
           margin-left: 19px;
 
-          .teacher-title-post{
+          .teacher-title-post {
+            line-height: 30px;
             color: #1a1a1a;
             font-family: "Nunito Sans", serif;
             font-size: 30px;
             font-weight: 700;
             margin-top: 15px;
-            margin-bottom: -20px;
+            margin-bottom: 0;
           }
 
-          .teacher-position-post{
+          .teacher-position-post {
+            line-height: 30px;
             color: #15af66;
             font-family: Montserrat, serif;
             font-size: 24px;
@@ -62,14 +66,77 @@
   }
 }
 
-@include respond-to($phone){
-  .teachers-block{
+@include respond-to($tablet-portrait){
+  .teachers-block {
+    width: 100%;
+    background-color: #f1f1f1;
+    text-align: center;
+
+    .teachers-block-title {
+      padding-top: 80px;
+      color: #1a1a1a;
+      font-family: "Nunito Sans", serif;
+      font-size: 48px;
+      font-weight: 700;
+    }
+
+    .teachers-posts {
+      text-align: justify;
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+
+      .teacher-post {
+        width: 45%;
+        margin: 40px 0 40px 38px;
+        display: flex;
+        flex-wrap: nowrap;
+
+        .teacher-image-post {
+          img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+          }
+        }
+
+        .teacher-content {
+          display: flex;
+          flex-wrap: wrap;
+          margin-left: 19px;
+
+          .teacher-title-post {
+            color: #1a1a1a;
+            font-family: "Nunito Sans", serif;
+            font-size: 30px;
+            font-weight: 700;
+            margin-top: 15px;
+            margin-bottom: -20px;
+          }
+
+          .teacher-position-post {
+            color: #15af66;
+            font-family: Montserrat, serif;
+            font-size: 24px;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+    .navigation {
+      display: none;
+    }
+  }
+}
+
+@include respond-to($phone) {
+  .teachers-block {
     width: 100%;
     height: 320px;
     background-color: #f1f1f1;
     text-align: center;
     position: relative;
-
 
     .teachers-block-title {
       padding-top: 40px;
@@ -79,31 +146,35 @@
       font-weight: 700;
     }
 
-    .teachers-posts {
-      display: flex;
-      flex-wrap: nowrap;
+    .slick-slide {
+      opacity: 0.5;
+      width: 200px;
 
-      .teacher-post{
-        width: 170px;
+      &.slick-active{
+        opacity: 1;
+      }
 
-        .teacher-image-post{
-          img{
+      .teacher-post {
+
+        .teacher-image-post {
+          img {
             width: 100px;
             height: 100px;
             border-radius: 50%;
+            margin: auto;
           }
         }
 
-        .teacher-content{
+        .teacher-content {
 
-          .teacher-title-post{
+          .teacher-title-post {
             color: #1a1a1a;
             font-family: "Nunito Sans", serif;
             font-size: 24px;
             font-weight: 700;
           }
 
-          .teacher-position-post{
+          .teacher-position-post {
             color: #41bc82;
             font-family: "Nunito Sans", serif;
             font-size: 18px;
@@ -116,23 +187,47 @@
     .navigation-teacher {
       position: absolute;
       width: 100%;
-      bottom: 0;
+      bottom: 10px;
       text-align: center;
 
-      .dot {
+      .dot-teacher {
         display: inline-block;
         width: 10px;
         height: 10px;
-        background: #f1f1f1;
+        background-color: #f1f1f1;
+        border: 2px solid #606060;
         cursor: pointer;
         border-radius: 16px;
         margin: 0 20px;
+      }
+      .active-teacher {
+        background-color: #1a1a1a;
         border: 2px solid #1a1a1a;
       }
+    }
 
-      .active {
-        background-color: #1a1a1a;
+    .slick-dots {
+      bottom: -50px;
+      li {
+        button {
+          width: 10px;
+          height: 10px;
+          background-color: #f1f1f1;
+          border: 2px solid #606060;
+          border-radius: 50%;
+
+          &:before {
+            all: initial;
+          }
+        }
       }
+      .slick-active {
+        button {
+          background-color: #1a1a1a;
+          border: 2px solid #1a1a1a;
+        }
+      }
+
     }
 
   }

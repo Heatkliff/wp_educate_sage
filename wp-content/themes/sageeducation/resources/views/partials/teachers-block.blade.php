@@ -8,23 +8,14 @@
             @include('partials/teacher-block-element')
         @endforeach
     </div>
-    <div class="navigation-teacher"></div>
+    <div class="navigation-teacher">
+        <div class="dot-teacher"></div>
+        <div class="dot-teacher"></div>
+        <div class="dot-teacher active-teacher"></div>
+        <div class="dot-teacher"></div>
+        <div class="dot-teacher"></div>
+    </div>
+
 </div>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
