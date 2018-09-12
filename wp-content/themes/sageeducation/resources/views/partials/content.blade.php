@@ -3,4 +3,5 @@
   @include('partials/features-block')
   @include('partials/courses-block')
   @include('partials/teachers-block')
+  @include('partials/programs-block')
 </article>
