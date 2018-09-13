@@ -1,0 +1,60 @@
+.blog-slider-block {
+  text-align: center;
+
+  .title-slider-block{
+    margin-top: 80px;
+    padding-bottom: 30px;
+    color: #1a1a1a;
+    font-family: "Nunito Sans", serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 60px;
+  }
+
+  .blog-posts-block {
+    .blog-post-in-block {
+      text-align: center;
+      width: 263px;
+      height: 530px;
+
+      .image-post-block {
+        margin: 0 30px;
+        background: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 263px;
+        height: 287px;
+      }
+      .title-post-block {
+        font-family: "Nunito Sans", serif;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 32px;
+        margin: 50px;
+        width: 212px;
+      }
+      .content-post-block {
+        color: #484848;
+        font-family: Montserrat, serif;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24px;
+        margin: 0 50px;
+        width: 212px;
+      }
+    }
+  }
+
+  button{
+    margin-top: 40px;
+    border-radius: 50px;
+    
+    a{
+      color: #ffffff;
+      font-family: "Nunito Sans", serif;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 30px;
+    }
+  }
+}

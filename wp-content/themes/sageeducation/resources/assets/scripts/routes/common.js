@@ -263,6 +263,25 @@ export default {
             }
         });
 
+
+        //////////////////////////////////////////////////////
+        // blog posts slider
+
+        $(document).ready(function () {
+            $('.blog-posts-block').slick({
+                dots: false,
+                arrows: false,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                centerMode: true,
+                variableWidth: true,
+            });
+        });
+
+
+
+
     },
 };
 
