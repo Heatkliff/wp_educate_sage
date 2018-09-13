@@ -228,6 +228,41 @@ export default {
                 console.log(parseInt($('.teachers-posts .slick-active').attr('data-slick-index')) + 2);
             })
         }
+
+        /////////////////////////////////////////////////////////////
+        // slider client comment
+
+
+
+        $(document).ready(function () {
+            if (window.innerWidth > 800) {
+                $('.what-client-slider-content').slick({
+                    nextArrow: '<i class="client-comment-arrow-right"></i>',
+                    prevArrow: '<i class="client-comment-arrow-left"></i>',
+                    dots: false,
+                    infinite: true,
+                    speed: 300,
+                    slidesToShow: 1,
+                    adaptiveHeight: true,
+                });
+
+                $(".photos-comment-slider .photo-client:eq(" + $(".what-client-slider-content .slick-active").attr("data-slick-index") + ")").addClass("active-darkness");
+
+                $('.what-client-slider-content').on("afterChange", function () {
+                    $('.active-darkness').removeClass('active-darkness');
+                    $(".photos-comment-slider .photo-client:eq(" + $(".what-client-slider-content .slick-active").attr("data-slick-index") + ")").addClass("active-darkness");
+                })
+            }else {
+                $('.what-client-mobile').slick({
+                    infinite: true,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    dots: true,
+                });
+            }
+        });
+
     },
 };
 

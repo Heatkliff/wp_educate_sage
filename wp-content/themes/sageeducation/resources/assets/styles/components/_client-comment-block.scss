@@ -1,0 +1,194 @@
+.what-client-comment-block {
+  width: 100%;
+  background-color: #f1f1f1;
+
+  @include respond-to($more-tablet-portrait) {
+    height: 650px;
+
+    .title-client-comment-block {
+      text-align: center;
+      color: #1a1a1a;
+      font-family: "Nunito Sans", serif;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 60px;
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+
+    .what-client-sliders {
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+
+      .photos-comment-slider {
+        text-align: center;
+
+        .photo-client {
+          position: relative;
+          display: initial;
+          width: 130px;
+          height: 130px;
+
+          img {
+            border-radius: 50%;
+            margin: 20px;
+          }
+
+          .photo-client-darkness {
+            border-radius: 50%;
+            margin: 20px;
+            background-color: black;
+            border: none;
+            opacity: 0.9;
+            position: absolute;
+            top: -87px;
+            left: 0;
+            width: 150px;
+            height: 150px;
+          }
+        }
+        .active-darkness {
+          div {
+            opacity: 0 !important;
+          }
+          img {
+            border: 3px solid #27ae60;
+          }
+        }
+      }
+
+      .what-client-slider-content {
+        margin-top: 20px;
+        height: 250px;
+
+        .client-comment-arrow-right {
+          background-image: url($dist + "images/arrow_right.png");
+          width: 24px;
+          height: 44px;
+          display: block;
+          position: absolute;
+          right: 10%;
+          top: -30%;
+        }
+
+        .client-comment-arrow-left {
+          background-image: url($dist + "images/arrow_left.png");
+          background-size: cover;
+          width: 24px;
+          height: 44px;
+          position: absolute;
+          display: block;
+          top: -30%;
+          left: 10%;
+        }
+
+        .content-client-comment {
+          text-align: center;
+
+          .comment-client {
+            display: inherit;
+            max-width: 540px;
+            color: #484848;
+            font-family: Montserrat, serif;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 24px;
+          }
+          .name-client-comment {
+            margin-top: 50px;
+            color: #1a1a1a;
+            font-family: "Nunito Sans", serif;
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 36px;
+          }
+          .position-client-comment {
+            color: #484848;
+            font-family: "Nunito Sans", serif;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 30px;
+          }
+        }
+      }
+    }
+    .what-client-mobile {
+      display: none;
+
+      * {
+        display: none;
+      }
+    }
+  }
+  @include respond-to($tablet-portrait-menu) {
+    height: 550px;
+
+    .title-client-comment-block {
+      text-align: center;
+      color: #1a1a1a;
+      font-family: "Nunito Sans", serif;
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 48px;
+      padding-top: 40px;
+      padding-bottom: 20px;
+    }
+
+    .what-client-sliders {
+      display: none;
+
+      * {
+        display: none;
+      }
+    }
+
+    .what-client-mobile {
+      .comment-client-mobile {
+        width: 95%;
+        margin: auto;
+
+        .photo-client-mobile {
+          img {
+            margin: 20px auto;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid #27ae60;
+          }
+        }
+
+        .comment-client-mobile {
+          text-align: center;
+          margin: auto;
+          width: 85%;
+          color: #484848;
+          font-family: Montserrat, serif;
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 18px;
+        }
+      }
+
+      .slick-dots {
+        li {
+          width: 15px;
+          height: 15px;
+          background-color: #f1f1f1;
+          border: 2px solid #48494a;
+          border-radius: 50%;
+
+          button {
+            &:before {
+              all: inherit;
+            }
+          }
+        }
+        .slick-active {
+          background-color: #27ae60;
+          border: 2px solid #27ae60;
+        }
+      }
+    }
+  }
+}
