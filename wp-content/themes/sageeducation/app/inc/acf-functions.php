@@ -100,6 +100,54 @@ if( function_exists('acf_add_local_field_group') ):
     ));
 
     acf_add_local_field_group(array(
+        'key' => 'group_5b9a0f4ea173f',
+        'title' => 'Program Fields',
+        'fields' => array(
+            array(
+                'key' => 'field_5b9a0f59ff6db',
+                'label' => 'Image Program',
+                'name' => 'image_program_field',
+                'type' => 'image',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'return_format' => 'array',
+                'preview_size' => 'medium',
+                'library' => 'all',
+                'min_width' => '',
+                'min_height' => '',
+                'min_size' => '',
+                'max_width' => '',
+                'max_height' => '',
+                'max_size' => '',
+                'mime_types' => '',
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'taxonomy',
+                    'operator' => '==',
+                    'value' => 'programs',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => 1,
+        'description' => '',
+    ));
+
+    acf_add_local_field_group(array(
         'key' => 'group_5b893c3847ff6',
         'title' => 'Setting site',
         'fields' => array(
@@ -672,6 +720,41 @@ if( function_exists('acf_add_local_field_group') ):
                 'type' => 'text',
                 'instructions' => '',
                 'required' => 1,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'maxlength' => '',
+            ),
+            array(
+                'key' => 'field_5b9a10dd56a97',
+                'label' => 'Programs',
+                'name' => '',
+                'type' => 'tab',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'placement' => 'top',
+                'endpoint' => 0,
+            ),
+            array(
+                'key' => 'field_5b9a10ef56a98',
+                'label' => 'Title block',
+                'name' => 'title_block_programs',
+                'type' => 'text',
+                'instructions' => '',
+                'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(
                     'width' => '',

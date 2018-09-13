@@ -1,33 +1,8 @@
+<div class="title-program-block">{!! get_field('title_block_programs', 'option') !!}</div>
 <div class="programs-block">
-    <div class="program-element">
-        @include('partials/programs-element-block')
-    </div>
-    <div class="program-element">
-        @include('partials/programs-element-block')
-    </div>
-    <div class="program-element">
-        @include('partials/programs-element-block')
-    </div>
+    @foreach(get_terms("programs") as $program)
+        <div class="program-element">
+            @include('partials/programs-element-block')
+        </div>
+    @endforeach
 </div>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
