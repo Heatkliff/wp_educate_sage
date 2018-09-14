@@ -12,4 +12,5 @@
     @include('partials/blog-block')
     @include('partials/subscribe-block')
     @include('partials/contact-block')
+    @include('partials/footer-menu-block')
 @endsection

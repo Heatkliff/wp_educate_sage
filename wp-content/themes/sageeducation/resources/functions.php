@@ -114,7 +114,6 @@ function load_more()
     foreach ($all_courses->posts as $course) {
         $course_fields = get_field('fields_cources_post', $course->ID, 'option');
         $add_courses = $add_courses.course_post_output($course,$course_fields);
-//        var_dump($course);
     }
     echo $add_courses;
 }
