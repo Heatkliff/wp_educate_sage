@@ -10,4 +10,5 @@
     @include('partials/programs-block')
     @include('partials/client-comments-block')
     @include('partials/blog-block')
+    @include('partials/subscribe-block')
 @endsection

@@ -25,7 +25,7 @@ add_action('wp_enqueue_scripts', function () {
 
     wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
     wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
-    wp_enqueue_script('sage/mobile-10.js', asset_path('../lib/jquery.mobile-1.0.min.js'), ['jquery'], null, true);
+    wp_enqueue_script('sage/mobile-10.js', asset_path('../lib/jquery.mobile-1.4.5.min.js'), ['jquery'], null, true);
 
     wp_localize_script( 'sage/main.js', 'the_ajax_script', $ajax_params );
 

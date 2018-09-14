@@ -5,7 +5,7 @@
 	'post_type'   => 'post',
 	'suppress_filters' => true,)))
 <div class="blog-slider-block">
-    <div class="title-slider-block">Blog</div>
+    <div class="title-slider-block">{!! get_field('blog_slider_title','option') !!}</div>
     <div class="blog-posts-block">
         @foreach($blog_posts as $blog_post)
             <div class="blog-post-in-block">

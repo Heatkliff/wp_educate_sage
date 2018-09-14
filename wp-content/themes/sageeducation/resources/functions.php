@@ -166,3 +166,25 @@ function get_all_teachers(){
     }
     return $returned_posts;
 }
+
+function subscribe_send(){
+    if( isset( $_POST) ){
+        $email = $_POST['email'];
+        $login = explode("@", $email)[0];
+        $password = generateRandomString(8);
+        wp_create_user($login, $password, $email);
+    }
+}
+
+add_action('wp_ajax_subscribe_send', 'subscribe_send');
+add_action('wp_ajax_nopriv_subscribe_send', 'subscribe_send');
+
+function generateRandomString($length = 10) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
+}

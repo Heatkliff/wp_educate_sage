@@ -233,7 +233,6 @@ export default {
         // slider client comment
 
 
-
         $(document).ready(function () {
             if (window.innerWidth > 800) {
                 $('.what-client-slider-content').slick({
@@ -252,7 +251,7 @@ export default {
                     $('.active-darkness').removeClass('active-darkness');
                     $(".photos-comment-slider .photo-client:eq(" + $(".what-client-slider-content .slick-active").attr("data-slick-index") + ")").addClass("active-darkness");
                 })
-            }else {
+            } else {
                 $('.what-client-mobile').slick({
                     infinite: true,
                     slidesToShow: 1,
@@ -280,6 +279,26 @@ export default {
         });
 
 
+        //////////////////////////////////////////////////////////////
+        // subscribe form ajax
+
+        $('#subscribe-send').on('click', function () {
+            var data = {
+                action: 'subscribe_send',
+                email: $('#subscribe-send-email').val(),
+            };
+            $.ajax({
+                url: window.ajax.ajax_url,
+                data: data,
+                type: 'POST',
+                success: function(){
+                    alert('success!');
+                },
+                error: function(){
+                    alert('error!');
+                },
+            });
+        })
 
 
     },
