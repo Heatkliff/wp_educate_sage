@@ -1,8 +1,3 @@
-<br>
-<br>
-<br>
-<br>
-<br>
 <div class="subscribe-block"
      style="background-image: url({!! get_field('image_background_for_subscribe_block','option')['url'] !!})">
     <div class="form">
@@ -14,25 +9,3 @@
         <button type="button" id="subscribe-send" class="btn btn-success"> Send</button>
     </div>
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>

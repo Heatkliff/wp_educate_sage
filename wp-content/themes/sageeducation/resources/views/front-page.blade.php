@@ -11,4 +11,5 @@
     @include('partials/client-comments-block')
     @include('partials/blog-block')
     @include('partials/subscribe-block')
+    @include('partials/contact-block')
 @endsection
