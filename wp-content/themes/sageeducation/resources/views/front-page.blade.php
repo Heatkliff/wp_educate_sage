@@ -1,8 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('partials.page-header')
-
+    @include('partials/slider')
     @include('partials/education-block')
     @include('partials/features-block')
     @include('partials/courses-block')

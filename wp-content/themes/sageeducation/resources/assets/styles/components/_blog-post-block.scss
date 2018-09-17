@@ -1,7 +1,7 @@
 .blog-slider-block {
   text-align: center;
 
-  .title-slider-block{
+  .title-slider-block {
     margin-top: 80px;
     padding-bottom: 30px;
     color: #1a1a1a;
@@ -12,7 +12,21 @@
   }
 
   .blog-posts-block {
+    height: 600px;
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 0;
+    -webkit-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
     .blog-post-in-block {
+      transform: translateX(-30px);
+      margin: 0 15px;
+      float: left;
+      color: #FFF;
       text-align: center;
       width: 263px;
       height: 530px;
@@ -27,10 +41,11 @@
       }
       .title-post-block {
         font-family: "Nunito Sans", serif;
+        color: #1a1a1a;
         font-size: 24px;
         font-weight: 700;
         line-height: 32px;
-        margin: 50px;
+        margin: 30px;
         width: 212px;
       }
       .content-post-block {
@@ -39,17 +54,17 @@
         font-size: 18px;
         font-weight: 400;
         line-height: 24px;
-        margin: 0 50px;
+        margin: 0 30px;
         width: 212px;
       }
     }
   }
 
-  button{
+  button {
     margin-top: 40px;
     border-radius: 50px;
-    
-    a{
+
+    a {
       color: #ffffff;
       font-family: "Nunito Sans", serif;
       font-size: 24px;

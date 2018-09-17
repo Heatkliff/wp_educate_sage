@@ -11,19 +11,19 @@
     @include respond-to($more-tablet-portrait) {
       font-size: 48px;
       padding-top: 65px;
-      padding-bottom: 40px;
+      padding-bottom: 20px;
     }
 
     @include respond-to($tablet-portrait) {
       font-size: 48px;
       padding-top: 50px;
-      padding-bottom: 40px;
+      padding-bottom: 20px;
     }
 
     @include respond-to($phone) {
       font-size: 36px;
       padding-top: 35px;
-      padding-bottom: 40px;
+      padding-bottom: 20px;
     }
   }
 
@@ -37,13 +37,12 @@
       background-color: #f1f1f1;
       margin: 35px 17px;
       padding-bottom: 30px;
-      @include respond-to($tablet-portrait){
+      @include respond-to($tablet-portrait) {
         width: 45%;
       }
-      @include respond-to($more-tablet-portrait){
+      @include respond-to($more-tablet-portrait) {
         width: 30%;
       }
-
 
       .image-pre-post img {
         width: 100%;
@@ -51,6 +50,7 @@
       }
 
       .title-pre-post {
+        margin-top: 15px;
         margin-left: 25px;
         font-weight: 700;
         @include respond-to($more-tablet-portrait) {
@@ -128,12 +128,9 @@
 
     .btn-light {
       border-radius: 50px;
-
-      .load_more {
-        color: #8f8f8f;
-        font-size: 24px;
-        font-weight: 700;
-      }
+      color: #8f8f8f;
+      font-size: 24px;
+      font-weight: 700;
     }
   }
 }
@@ -158,13 +155,13 @@
     @include respond-to($tablet-portrait) {
       font-size: 48px;
       padding-top: 50px;
-      padding-bottom: 40px;
+      padding-bottom: 30px;
     }
 
     @include respond-to($phone) {
       font-size: 36px;
-      padding-top: 35px;
-      padding-bottom: 40px;
+      padding-top: 40px;
+      padding-bottom: 20px;
     }
   }
 
@@ -185,6 +182,7 @@
       }
 
       .title-pre-post {
+        margin-top: 15px;
         margin-left: 25px;
         font-weight: 700;
         @include respond-to($more-tablet-portrait) {
@@ -273,48 +271,56 @@
   }
 }
 
-@include respond-to($phone) {
+@include respond-to($tablet-portrait) {
   .courses-block-mobile {
-    overflow: hidden;
-    position: relative;
-    width: 95%;
-    height: 800px;
+    display: none;
+  }
+}
+
+@include respond-to($more-tablet-portrait) {
+  .courses-block-mobile {
+    display: none;
+  }
+}
+
+@include respond-to($phone) {
+  .courses-block {
+    display: none;
+  }
+
+  .courses-block-mobile {
+    width: 90%;
+    height: 750px;
     margin: 0 auto;
 
     .courses-pre-posts {
-      transform: translateY(2%);
-      position: relative;
-      height: 700px;
       transition: 1s;
 
       .courses-pre-post {
-        float: left;
         height: 580px;
         display: block;
         max-width: 460px;
-        margin: 10px 10px;
+        margin: 0 !important;
       }
     }
+    .slick-dots {
+      bottom: -40px;
 
-    .navigation {
-      position: absolute;
-      width: 100%;
-      bottom: 10px;
-      text-align: center;
+      li {
+        width: 15px;
+        height: 15px;
+        background-color: #f1f1f1;
+        border: 2px solid #48494a;
+        border-radius: 50%;
 
-      .dot {
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        background: #ffffff;
-        cursor: pointer;
-        border-radius: 16px;
-        margin: 0 20px;
-        border: 2px solid #1a1a1a;
+        button {
+          &:before {
+            all: inherit;
+          }
+        }
       }
-      .active {
+      .slick-active {
         background-color: #27ae60;
-        border: 2px solid #27ae60;
         border: 2px solid #27ae60;
       }
     }

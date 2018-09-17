@@ -1,9 +1,9 @@
 <div class="slider">
-    <ul>
+    <div class="slider-header">
         @foreach (get_field("slides_in_slider", "option") as $slide)
-        <li>
+        <div>
             @include('partials.slide')
-        </li>
+        </div>
         @endforeach
-    </ul>
+    </div>
 </div>

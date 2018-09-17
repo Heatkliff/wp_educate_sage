@@ -34,15 +34,17 @@
 
       .features-post {
         margin: auto;
-        margin-top: 60px;
         text-align: center;
         @include respond-to($more-tablet-portrait){
+          margin-top: 60px;
           width: 30%;
         }
         @include respond-to($tablet-portrait){
+          margin-top: 50px;
           width: 45%;
         }
         @include respond-to($phone){
+          margin-top: 40px;
           width: 90%;
         }
 

@@ -10,6 +10,7 @@ import common from './routes/common';
 import home from './routes/home';
 import aboutUs from './routes/about';
 import slick from 'slick-carousel';
+import itemslide from 'itemslide';
 
 
 /** Populate Router instance with DOM routes */
@@ -22,6 +23,8 @@ const routes = new Router({
   aboutUs,
   // Swipe for sliders
   slick,
+  //carousel
+  itemslide,
 });
 
 // Load Events

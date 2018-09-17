@@ -8,6 +8,12 @@
             @include('partials/teacher-block-element')
         @endforeach
     </div>
+    <div class="teachers-posts-mobile">
+        @php $teachers = get_all_teachers() @endphp
+        @foreach($teachers as $teacher)
+            @include('partials/teacher-block-element')
+        @endforeach
+    </div>
     <div class="navigation-teacher">
         <div class="dot-teacher"></div>
         <div class="dot-teacher"></div>

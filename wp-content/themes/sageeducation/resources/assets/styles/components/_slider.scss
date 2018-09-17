@@ -1,23 +1,23 @@
 .slider {
-
-  ul, li {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
+  margin-bottom: 60px;
+  @include respond-to($tablet-portrait-menu) {
+    height: 500px;
+  }
+  @include respond-to($more-tablet-portrait) {
+    height: 700px;
   }
 
-  ul {
-    width: 9999px;
+  .slider-header {
 
-    li {
+    div {
       list-style-type: none;
       float: left;
       width: 100vw;
       position: relative;
-      @include respond-to($tablet-portrait-menu){
+      @include respond-to($tablet-portrait-menu) {
         height: 500px;
       }
-      @include respond-to($more-tablet-portrait){
+      @include respond-to($more-tablet-portrait) {
         height: 700px;
       }
 
@@ -61,37 +61,37 @@
           }
           h1 {
             text-align: center;
-            @include respond-to($tablet-portrait-menu){
+            @include respond-to($tablet-portrait-menu) {
               font-size: 36px;
             }
-            @include respond-to($more-tablet-portrait){
+            @include respond-to($more-tablet-portrait) {
               font-size: 72px;
             }
           }
           h3 {
             width: 100%;
             text-align: center;
-            @include respond-to($tablet-portrait-menu){
+            @include respond-to($tablet-portrait-menu) {
               font-size: 14px;
             }
-            @include respond-to($more-tablet-portrait){
+            @include respond-to($more-tablet-portrait) {
               font-size: 24px;
             }
           }
           .button {
             text-align: center;
 
-            .btn-success{
-              margin-top: 30px;
+            .btn-success {
+              margin-top: 222px;
               border-radius: 50px;
               background-color: #27ae60;
               border-color: #27ae60;
               padding: 10px 20px;
 
-              @include respond-to($tablet-portrait-menu){
+              @include respond-to($tablet-portrait-menu) {
                 font-size: 18px;
               }
-              @include respond-to($more-tablet-portrait){
+              @include respond-to($more-tablet-portrait) {
                 font-size: 24px;
               }
 
@@ -106,33 +106,30 @@
       }
 
     }
-  }
+    .slick-dots {
+      @include respond-to($tablet-portrait-menu) {
+        bottom: -480px;
+      }
+      @include respond-to($more-tablet-portrait) {
+        bottom: -680px;
+      }
 
-  .nav {
-    position: relative;
-    bottom: 40px;
-    display: inline-block;
-    left: 50%;
-    transform: translateX(-50%);
+      li {
+        width: 15px;
+        height: 15px;
+        background: none;
+        border: 2px solid #ffffff;
+        border-radius: 50%;
 
-
-    span {
-      opacity: 0.9;
-      background: none;
-      margin: 0 8px 0 0;
-      width: 16px;
-      height: 16px;
-      border-radius: 8px;
-      border: 2px solid #ffffff;
-      cursor: pointer;
-      overflow: hidden;
-      display: block !important;
-      float: left;
-      box-shadow: 0 1px 2px #000;
-
-      &.on {
-        border-color: #2e9419;
-        background: #2e9419;
+        button {
+          &:before {
+            all: inherit;
+          }
+        }
+      }
+      .slick-active {
+        background-color: #27ae60;
+        border: 2px solid #27ae60;
       }
     }
   }

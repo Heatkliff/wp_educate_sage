@@ -15,6 +15,7 @@
   margin: auto;
   display: flex;
   flex-wrap: wrap;
+  padding-bottom: 80px;
 
   .program-element {
     position: relative;
@@ -40,6 +41,7 @@
     }
 
     .blackout-program-element {
+      transition: 1s;
       background-color: #42ad6e;
       opacity: 0.8;
       position: absolute;
@@ -72,6 +74,12 @@
         font-size: 18px;
         font-weight: 400;
         line-height: 24px;
+      }
+    }
+
+    &:hover{
+      .blackout-program-element{
+        opacity: 0;
       }
     }
 

@@ -1,4 +1,5 @@
 @include respond-to($more-tablet-portrait) {
+
   .teachers-block {
     width: 100%;
     background-color: #f1f1f1;
@@ -12,12 +13,17 @@
       font-size: 48px;
       font-weight: 700;
     }
+    .teachers-posts-mobile{
+      display: none;
+    }
 
     .teachers-posts {
       text-align: justify;
       max-width: 1200px;
       line-height: 30px;
-      margin: auto;
+      margin: 20px auto;
+      padding-top: 20px;
+      padding-bottom: 20px;
       display: flex;
       flex-wrap: wrap;
 
@@ -79,11 +85,16 @@
       font-size: 48px;
       font-weight: 700;
     }
+    .teachers-posts-mobile{
+      display: none;
+    }
 
     .teachers-posts {
       text-align: justify;
       max-width: 1200px;
       margin: auto;
+      padding-top: 20px;
+      padding-bottom: 20px;
       display: flex;
       flex-wrap: wrap;
 
@@ -146,6 +157,10 @@
       font-weight: 700;
     }
 
+    .teachers-posts{
+      display: none;
+    }
+
     .slick-slide {
       opacity: 0.5;
       width: 200px;
@@ -198,7 +213,7 @@
         border: 2px solid #606060;
         cursor: pointer;
         border-radius: 16px;
-        margin: 0 20px;
+        margin: 0 3px;
       }
       .active-teacher {
         background-color: #1a1a1a;
