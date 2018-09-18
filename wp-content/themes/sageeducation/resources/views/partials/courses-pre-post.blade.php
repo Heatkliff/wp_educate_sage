@@ -19,7 +19,7 @@
     </div>
     <div class="join-courses">
         <button type="button" class="btn btn-success">
-            <a href="#">
+            <a href="{!! get_page_link($course->ID) !!}">
                 Join Now
             </a>
         </button>

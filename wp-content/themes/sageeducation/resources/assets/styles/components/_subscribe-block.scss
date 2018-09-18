@@ -28,6 +28,7 @@
       }
 
       input {
+        outline:none;
         font-size: 32px;
         margin-top: 0;
         padding-right: 0;
@@ -47,6 +48,12 @@
         font-weight: 700;
         line-height: 30px;
       }
+    }
+    .alert{
+      transform: translateY(150%);
+    }
+    .none{
+      display: none;
     }
   }
 }
@@ -99,6 +106,9 @@
         font-weight: 700;
         line-height: 30px;
       }
+    }
+    .none{
+      display: none;
     }
   }
 }

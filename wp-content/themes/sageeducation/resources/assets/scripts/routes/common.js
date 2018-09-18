@@ -34,50 +34,6 @@ export default {
             });
         });
 
-        // $(document).ready(function () {
-        //     $(".slider").each(function () {
-        //         var obj = $(this);
-        //         $(obj).append("<div class='nav'></div>");
-        //         $(obj).find("li").each(function () {
-        //             $(obj).find(".nav").append("<span rel='" + $(this).index() + "'></span>");
-        //             $(this).addClass("slider" + $(this).index());
-        //         });
-        //         $(obj).find("span").first().addClass("on");
-        //     });
-        // });
-        // function sliderJS(obj, sl) {
-        //     var ul = $(sl).find("ul");
-        //     var bl = $(sl).find("li.slider" + obj);
-        //     var step = $(bl).width();
-        //     $(ul).animate({marginLeft: "-" + step * obj}, 1000);
-        // }
-        //
-        // $(document).on("click", ".slider .nav span", function () { // slider click navigate
-        //     var sl = $(this).closest(".slider");
-        //     $(sl).find("span").removeClass("on");
-        //     $(this).addClass("on");
-        //     var obj = $(this).attr("rel");
-        //     sliderJS(obj, sl);
-        //     return false;
-        // });
-        //
-        //
-        // $(document).ready(function autoscroll() {
-        //     var checks = $(document).find('.slider .nav span');
-        //     var check_now = 1;
-        //
-        //     setInterval(function () {
-        //         checks[check_now].click();
-        //
-        //         if (check_now + 1 < checks.length) {
-        //             check_now += 1;
-        //         } else {
-        //             check_now = 0;
-        //         }
-        //     }, window.slide_time['autoslide_time'] * 1000);
-        //
-        // });
-
         /////////////////////////////////////////////////////////////////////////////////////////////
 
         // ajax load posts
@@ -152,6 +108,7 @@ export default {
                 centerMode: true,
                 centerPadding: '20px',
                 slidesToShow: 1,
+                slidesToScroll: 0,
                 arrows: false,
                 autoplay: true,
                 variableWidth: true,
@@ -212,7 +169,37 @@ export default {
         // blog posts slider
 
         $(document).ready(function () {
-            $('.blog-slider-block .blog-posts-block').itemslide();
+            $('.blog-slider-block .blog-posts-block').slick({
+                dots: false,
+                arrows: false,
+                infinite: true,
+                speed: 300,
+                slidesToScroll: 4,
+                slidesToShow: 3.95,
+                responsive: [
+                    {
+                        breakpoint: 1200,
+                        settings: {
+                            slidesToScroll: 3,
+                            slidesToShow: 2.95,
+                        },
+                    },
+                    {
+                        breakpoint: 800,
+                        settings: {
+                            slidesToScroll: 2,
+                            slidesToShow: 1.95,
+                        },
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToScroll: 1,
+                            slidesToShow: 0.95,
+                        },
+                    },
+                ],
+            });
         });
 
 
@@ -229,10 +216,18 @@ export default {
                 data: data,
                 type: 'POST',
                 success: function () {
-                    alert('success!');
+                    $('.subscribe-block .alert-success').removeClass('none');
+                    $('#subscribe-send-email').attr("value", "");
+                    setTimeout(function () {
+                        $('.subscribe-block .alert-success').fadeOut("slow");
+                    }, 3000);
+
                 },
                 error: function () {
-                    alert('error!');
+                    $('.subscribe-block .alert-danger').removeClass('none');
+                    setTimeout(function () {
+                        $('.subscribe-block .alert-danger').fadeOut("slow");
+                    }, 3000);
                 },
             });
         })

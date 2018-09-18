@@ -30,12 +30,17 @@
             label {
               span {
                 input {
+                  outline:none;
                   border: none;
                   border-bottom: 2px solid #a1a1a1;
                   color: #1a1a1a;
                   font-family: "Nunito Sans", serif;
                   font-size: 18px;
                   font-weight: 700;
+
+                  &:-webkit-autofill {
+                    -webkit-box-shadow: 0 0 0 30px white inset;
+                  }
                 }
               }
             }
@@ -45,12 +50,17 @@
             label {
               span {
                 input {
+                  outline:none;
                   border: none;
                   border-bottom: 2px solid #a1a1a1;
                   color: #1a1a1a;
                   font-family: "Nunito Sans", serif;
                   font-size: 18px;
                   font-weight: 700;
+
+                  &:-webkit-autofill {
+                    -webkit-box-shadow: 0 0 0 30px white inset;
+                  }
                 }
               }
             }
@@ -59,6 +69,7 @@
             label {
               span {
                 textarea {
+                  outline:none;
                   border: 2px solid #a1a1a1;
                   height: 186px;
                   color: #1a1a1a;
@@ -149,6 +160,7 @@
               width: 100%;
               span {
                 input {
+                  outline:none;
                   width: 95%;
                   border: none;
                   border-bottom: 2px solid #a1a1a1;
@@ -166,6 +178,7 @@
               width: 100%;
               span {
                 input {
+                  outline:none;
                   width: 95%;
                   border: none;
                   border-bottom: 2px solid #a1a1a1;
@@ -182,6 +195,7 @@
               width: 100%;
               span {
                 textarea {
+                  outline:none;
                   width: 95%;
                   border: 2px solid #a1a1a1;
                   height: 186px;

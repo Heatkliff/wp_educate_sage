@@ -23,7 +23,7 @@
     </div>
 
     <button type="button" class="btn btn-success">
-        <a href="#">
+        <a href="http://second.wp/index.php/blog-page/">
             Read more
         </a>
     </button>

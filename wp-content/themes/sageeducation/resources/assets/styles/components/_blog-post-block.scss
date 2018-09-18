@@ -23,20 +23,32 @@
     transform-style: preserve-3d;
 
     .blog-post-in-block {
+      padding: 0 20px;
       transform: translateX(-30px);
-      margin: 0 15px;
+      margin: 0;
       float: left;
       color: #FFF;
       text-align: center;
-      width: 263px;
+      @include respond-to($large-desktop){
+        width: 263px;
+      }
+      @include respond-to($tablet-landscape){
+        width: 30%;
+      }
+      @include respond-to($tablet-portrait){
+        width: 45%;
+      }
+      @include respond-to($phone){
+        width: 90%;
+      }
       height: 530px;
 
       .image-post-block {
-        margin: 0 30px;
+        margin: 0;
         background: no-repeat;
         background-size: cover;
         background-position: center;
-        width: 263px;
+        width: 100%;
         height: 287px;
       }
       .title-post-block {
@@ -45,8 +57,8 @@
         font-size: 24px;
         font-weight: 700;
         line-height: 32px;
-        margin: 30px;
-        width: 212px;
+        margin: 30px 15px;
+        width: 90%;
       }
       .content-post-block {
         color: #484848;
@@ -54,8 +66,8 @@
         font-size: 18px;
         font-weight: 400;
         line-height: 24px;
-        margin: 0 30px;
-        width: 212px;
+        margin: 0 15px;
+        width: 90%;
       }
     }
   }
