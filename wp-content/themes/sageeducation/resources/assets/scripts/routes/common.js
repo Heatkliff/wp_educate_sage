@@ -94,8 +94,6 @@ export default {
                     infinite: true,
                 });
             }
-
-
         };
 
 

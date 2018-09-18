@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('partials/slider')
     @include('partials/education-block')
     @include('partials/features-block')
     @include('partials/courses-block')
@@ -11,5 +10,4 @@
     @include('partials/blog-block')
     @include('partials/subscribe-block')
     @include('partials/contact-block')
-    @include('partials/footer-menu-block')
 @endsection

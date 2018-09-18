@@ -1,0 +1,31 @@
+.dark-header-about-menu {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .dark-header-about-link {
+    a {
+      text-decoration: none;
+      opacity: 0.34;
+      color: #ffffff;
+      font-family: Montserrat;
+      font-size: 10px;
+      font-weight: 300;
+      line-height: 40px;
+      /* Text style for "About Me" */
+      letter-spacing: 0.25px;
+    }
+  }
+
+  .dark-header-social-icons {
+    a {
+      img {
+        width: 10px;
+        height: 10px;
+      }
+    }
+  }
+
+  :after {
+    border-bottom: 3px #333333 solid;
+  }
+}

@@ -1,5 +1,6 @@
 <div class="subscribe-block"
      style="background-image: url({!! get_field('image_background_for_subscribe_block','option')['url'] !!})">
+    <div class="darkness-subscribe"></div>
     <div class="form">
         <div class="label">Subscribe to our Newsletter</div>
         <div class="email-subscribe">

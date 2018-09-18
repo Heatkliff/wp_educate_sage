@@ -43,6 +43,20 @@ add_action( 'init', function () {
     }
 } );
 
+/**
+ * ACF Options Second Page
+ *
+ */
+
+add_action( 'init', function () {
+    if ( function_exists( 'acf_add_options_page' ) ) {
+        acf_add_options_page( array(
+            'title'      => 'Pages Options',
+            'capability' => 'manage_options',
+        ) );
+    }
+} );
+
 function get_this_theme_part(){
     return get_theme_root().'/'.wp_get_theme().'/';
 }
