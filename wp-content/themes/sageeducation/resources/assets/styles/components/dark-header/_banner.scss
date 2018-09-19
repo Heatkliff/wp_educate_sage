@@ -1,0 +1,28 @@
+.banner-dark-header-block{
+  width: 100%;
+
+  .banner-dark-header{
+    max-width: 1200px;
+    margin: auto;
+
+    .title-dark-header{
+      margin-top: 60px;
+      margin-bottom: 20px;
+      color: #ffffff;
+      font-family: Montserrat, serif;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 40px;
+      /* Text style for "M, ino" */
+      letter-spacing: -2.4px;
+    }
+
+    .tagline-dark-header{
+      color: #ffffff;
+      font-family: Montserrat, serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 40px;
+    }
+  }
+}

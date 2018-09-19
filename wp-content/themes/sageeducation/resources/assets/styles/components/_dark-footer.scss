@@ -1,0 +1,113 @@
+.dark-footer-block {
+  width: 100%;
+  background-color: #181717;
+
+  .dark-footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+
+    .dark-sidebar {
+      width: 23%;
+      margin: 1%;
+      padding: 0 3%;
+
+      .widget-sidebar-dark {
+
+        .title-sidebar-dark {
+          color: #989898;
+          font-family: Montserrat, serif;
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 32px;
+          text-transform: uppercase;
+          /* Text style for "RECENT POS" */
+          letter-spacing: 0.6px;
+        }
+
+        ul {
+          padding: 20px 0;
+
+          li {
+            list-style-type: none;
+
+            a {
+              text-decoration: none;
+              color: #ffffff;
+              font-family: "Open Sans", serif;
+              font-size: 14px;
+              font-weight: 700;
+              line-height: 24px;
+            }
+
+            span {
+              width: 100%;
+              color: #b5b5b5;
+              font-family: Montserrat, serif;
+              font-size: 10px;
+              font-weight: 400;
+              text-transform: uppercase;
+            }
+          }
+        }
+      }
+
+      &.left-left-sidebar-dark {
+        .widget-sidebar-dark {
+          ul {
+            li {
+              border-bottom: 1px #262626 solid;
+              padding: 10px 0;
+              a {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+
+      &.left-center-sidebar-dark {
+        .widget-sidebar-dark {
+          ul {
+            li {
+              a {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+
+      &.right-center-sidebar-dark {
+        .widget-sidebar-dark {
+          ul {
+            margin-left: -5px;
+
+            li {
+              padding: 12px;
+              margin: 5px;
+              display: inline-block;
+              border: 1px #ffffff solid;
+              border-radius: 50px;
+            }
+          }
+        }
+      }
+
+      &.right-right-sidebar-dark {
+        .widget-sidebar-dark {
+          .textwidget {
+            p {
+              padding: 20px 0;
+              color: #ffffff;
+              font-family: "Open Sans", serif;
+              font-size: 13px;
+              font-weight: 400;
+              line-height: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

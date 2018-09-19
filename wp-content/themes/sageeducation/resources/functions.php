@@ -194,3 +194,16 @@ function my_acf_init() {
 }
 
 add_action('acf/init', 'my_acf_init');
+
+
+add_filter( 'get_search_form', 'my_search_form' );
+function my_search_form( $form ) {
+
+    $form = '
+	<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
+		<input type="text" class="search-input-dark-header" value="' . get_search_query() . '" name="s" id="s" placeholder="SEARCH" />
+		<input type="submit" id="searchsubmit" class="search-button-dark-header" value="" />
+	</form>';
+
+    return $form;
+}
