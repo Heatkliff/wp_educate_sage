@@ -1,0 +1,52 @@
+.block-pre-post-dark{
+  margin-top: 30px;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  height: 420px;
+  position: relative;
+
+  .darkness{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.7;
+  }
+  .pre-post{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .title-pre-post{
+      color: #ffffff;
+      font-family: Montserrat, serif;
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 24px;
+      text-transform: uppercase;
+    }
+
+    .pre-content-block{
+      margin: 20px;
+      color: #ffffff;
+      font-family: "Open Sans", serif;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+    }
+
+    .read-more-pre-post{
+      padding: 5px;
+      border: 2px #ffffff solid;
+      border-radius: 10px;
+      color: #ffffff;
+      font-family: Montserrat, serif;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+      text-transform: uppercase;
+    }
+  }
+}

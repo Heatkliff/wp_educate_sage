@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-{{--    @include('partials/')--}}
+    @include('partials.block-pre-post-dark')
 @endsection
